@@ -49,7 +49,7 @@ fn try_get_details(dir: &Path, adoc_path: String) -> Result<Option<String>> {
     let mut file_path = dir.join("pages").join(adoc_path);
     file_path.set_extension("adoc");
 
-    let file_content = std::fs::read_to_string(&file_path).context(Errors::FailedToReadFile(file_path))?;
+    let file_content = std::fs::read_to_string(&file_path).context(Errors::ReadFile(file_path))?;
     let first_line = file_content.lines().next().unwrap_or("");
     let regex = Regex::new(r"^\/\/ llmstxt-short-description: (.*)$").unwrap();
     let captures = regex.captures(first_line);
