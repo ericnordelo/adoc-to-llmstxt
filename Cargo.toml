@@ -15,4 +15,5 @@ doc = false
 anyhow = "1.0.95"
 clap = { version = "4.5.28", features = ["derive"] }
 indoc = "2.0.5"
+regex = "1.11.1"
 tokio = { version = "1.43.0", features = ["full"] }
