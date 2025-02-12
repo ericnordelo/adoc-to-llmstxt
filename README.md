@@ -40,4 +40,4 @@ base_url = "The doc-site base url"
 
 ### Example
 
-You can find an example of a llmstxt.toml config file [here](examples/cairo/v0.20.0/llmstxt.txt).
+You can find an example of a llmstxt.toml config file [here](examples/cairo/v0.20.0/llmstxt.toml).
