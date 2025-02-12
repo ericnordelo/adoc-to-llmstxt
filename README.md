@@ -19,6 +19,14 @@ This helps LLMs better understand and reference your project's documentation whe
 
 ## Usage
 
+### Using the files
+
+While this tool main purpose is to generate the files, you can also find the generated results for different versions of the OpenZeppelin Contracts for Cairo library inside the [llmstxts/](llmstxts) directory. This files can then be used for providing context to different AI applications like [Cursor](https://www.cursor.com/) or [ChatGPT](https://chatgpt.com/).
+
+
+
+### Generating the files
+
 The `adoc` subcommand expects a directory containing the adoc files (and a [llmstxt.toml configuration file](#config)):
 
 ```bash
