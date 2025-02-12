@@ -7,6 +7,7 @@ use std::path::{Path, PathBuf};
 use crate::config::{get_config, Config};
 use crate::errors::Errors;
 use crate::link::Link;
+
 /// Process a directory containing adoc files and generate the corresponding llmstxt
 /// based on the options provided.
 ///
@@ -65,9 +66,9 @@ fn generate_llmstxt(dir: &Path, nav_file: &Path, config: &Config) -> Result<Stri
             if path.contains("::") {
                 continue;
             } else if path.contains("api/") {
-                api_links.push(Link::new(dir, title, path)?);
+                api_links.push(Link::new(dir, &title, &path)?);
             } else {
-                doc_links.push(Link::new(dir, title, path)?);
+                doc_links.push(Link::new(dir, &title, &path)?);
             }
         }
     }
