@@ -1,7 +1,7 @@
 # llms.txt generator
 
 > [!NOTE]
-> This tool is specifically design to work with the OpenZeppelin doc-site format.
+> This tool is specifically designed to work with the OpenZeppelin doc-site format.
 
 A command-line tool that generates llms.txt files from Antora documentation sites. The llms.txt format is designed to provide a structured summary of documentation that can be easily consumed by LLMs (Large Language Models).
 
