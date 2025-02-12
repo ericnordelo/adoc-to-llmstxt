@@ -23,8 +23,8 @@ impl Link {
     /// # Requirements
     ///
     /// - `adoc_path` must be a valid path to an adoc file, and MUST NOT start with a `/`.
-    pub fn new(dir: &Path, title: &str, adoc_path: &str) -> Result<Self> {
-        let url = format!("{BASE_URL}{}", adoc_path);
+    pub fn new(dir: &Path, title: &str, adoc_path: &str, library_version: &str) -> Result<Self> {
+        let url = format!("{BASE_URL}{library_version}/{adoc_path}");
         let file_content = get_file_content(dir, adoc_path)?;
         let title = process_title(&file_content, title);
         let details = get_details(dir, adoc_path)?;
@@ -33,20 +33,6 @@ impl Link {
             url,
             details,
         })
-    }
-
-    /// Create a new link from an adoc path and title with details.
-    ///
-    /// # Requirements
-    ///
-    /// - `adoc_path` must be a valid path to an adoc file, and MUST NOT start with a `/`.
-    pub fn _new_with_details(title: String, adoc_path: String, details: String) -> Self {
-        let url = format!("{BASE_URL}{}", adoc_path);
-        Self {
-            title,
-            url,
-            details: Some(details),
-        }
     }
 }
 

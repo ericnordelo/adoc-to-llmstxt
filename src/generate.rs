@@ -66,9 +66,9 @@ fn generate_llmstxt(dir: &Path, nav_file: &Path, config: &Config) -> Result<Stri
             if path.contains("::") {
                 continue;
             } else if path.contains("api/") {
-                api_links.push(Link::new(dir, &title, &path)?);
+                api_links.push(Link::new(dir, &title, &path, &config.library_version)?);
             } else {
-                doc_links.push(Link::new(dir, &title, &path)?);
+                doc_links.push(Link::new(dir, &title, &path, &config.library_version)?);
             }
         }
     }
