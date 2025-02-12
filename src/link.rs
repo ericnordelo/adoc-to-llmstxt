@@ -24,7 +24,11 @@ impl Link {
     ///
     /// - `adoc_path` must be a valid path to an adoc file, and MUST NOT start with a `/`.
     pub fn new(dir: &Path, title: &str, adoc_path: &str, library_version: &str) -> Result<Self> {
-        let url = format!("{BASE_URL}{library_version}/{adoc_path}");
+        let url = if library_version.is_empty() {
+            format!("{BASE_URL}{adoc_path}")
+        } else {
+            format!("{BASE_URL}{library_version}/{adoc_path}")
+        };
         let file_content = get_file_content(dir, adoc_path)?;
         let title = process_title(&file_content, title);
         let details = get_details(dir, adoc_path)?;

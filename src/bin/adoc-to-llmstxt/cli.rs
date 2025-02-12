@@ -9,6 +9,10 @@ pub struct Cli {
     #[arg(short, long, value_name = "DIR")]
     pub dir: Option<PathBuf>,
 
+    /// Library version
+    #[arg(short = 'v', long, value_name = "VERSION")]
+    pub library_version: Option<String>,
+
     /// Activate the llms-full.txt mode
     #[arg(short, long)]
     pub full: bool,

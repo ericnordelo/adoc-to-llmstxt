@@ -10,7 +10,7 @@ async fn main() -> Result<()> {
 
     match cli.dir {
         Some(dir) => {
-            let llmstxt = generate_from_dir(dir, cli.full).await?;
+            let llmstxt = generate_from_dir(dir, cli.full, cli.library_version).await?;
             println!("{}", llmstxt);
         }
         None => {

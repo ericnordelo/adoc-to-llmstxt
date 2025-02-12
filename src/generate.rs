@@ -19,19 +19,29 @@ use crate::link::Link;
 /// # Returns
 ///
 /// * The generated llmstxt file.
-pub async fn generate_from_dir(dir: PathBuf, full: bool) -> Result<String> {
+pub async fn generate_from_dir(
+    dir: PathBuf,
+    full: bool,
+    library_version: Option<String>,
+) -> Result<String> {
     let config = get_config(&dir)?;
     let nav_file = find_nav_file(&dir)?;
 
     Ok(if !full {
-        generate_llmstxt(&dir, &nav_file, &config)?
+        generate_llmstxt(&dir, &nav_file, &config, library_version)?
     } else {
         generate_full_llmstxt(&dir, &nav_file)?
     })
 }
 
-fn generate_llmstxt(dir: &Path, nav_file: &Path, config: &Config) -> Result<String> {
+fn generate_llmstxt(
+    dir: &Path,
+    nav_file: &Path,
+    config: &Config,
+    library_version: Option<String>,
+) -> Result<String> {
     let mut llmstxt = String::new();
+    let library_version = library_version.unwrap_or("".to_string());
 
     let title = &config.title;
     let description = &config.description;
@@ -66,9 +76,9 @@ fn generate_llmstxt(dir: &Path, nav_file: &Path, config: &Config) -> Result<Stri
             if path.contains("::") {
                 continue;
             } else if path.contains("api/") {
-                api_links.push(Link::new(dir, &title, &path, &config.library_version)?);
+                api_links.push(Link::new(dir, &title, &path, &library_version)?);
             } else {
-                doc_links.push(Link::new(dir, &title, &path, &config.library_version)?);
+                doc_links.push(Link::new(dir, &title, &path, &library_version)?);
             }
         }
     }
