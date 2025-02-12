@@ -20,17 +20,17 @@ use crate::link::Link;
 ///
 /// * The generated llmstxt file.
 pub async fn generate_from_dir(
-    dir: PathBuf,
+    dir: &Path,
     full: bool,
     library_version: Option<String>,
 ) -> Result<String> {
-    let config = get_config(&dir)?;
-    let nav_file = find_nav_file(&dir)?;
+    let config = get_config(dir)?;
+    let nav_file = find_nav_file(dir)?;
 
     Ok(if !full {
-        generate_llmstxt(&dir, &nav_file, &config, library_version)?
+        generate_llmstxt(dir, &nav_file, &config, library_version)?
     } else {
-        generate_full_llmstxt(&dir, &nav_file)?
+        generate_full_llmstxt(dir, &nav_file)?
     })
 }
 
@@ -75,10 +75,13 @@ fn generate_llmstxt(
             // Ignore pages in other antora submodules
             if path.contains("::") {
                 continue;
-            } else if path.contains("api/") {
-                api_links.push(Link::new(dir, &title, &path, &library_version)?);
+            }
+
+            let link = Link::new(dir, &title, &path, &library_version, &config.base_url)?;
+            if path.contains("api/") {
+                api_links.push(link);
             } else {
-                doc_links.push(Link::new(dir, &title, &path, &library_version)?);
+                doc_links.push(link);
             }
         }
     }

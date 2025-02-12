@@ -3,8 +3,6 @@ use anyhow::{Context, Result};
 use regex::Regex;
 use std::path::Path;
 
-const BASE_URL: &str = "https://docs.openzeppelin.com/contracts-cairo/";
-
 /// A link to a page in the documentation.
 ///
 /// This is used to generate the llmstxt standard file sections.
@@ -23,11 +21,18 @@ impl Link {
     /// # Requirements
     ///
     /// - `adoc_path` must be a valid path to an adoc file, and MUST NOT start with a `/`.
-    pub fn new(dir: &Path, title: &str, adoc_path: &str, library_version: &str) -> Result<Self> {
+    pub fn new(
+        dir: &Path,
+        title: &str,
+        adoc_path: &str,
+        library_version: &str,
+        base_url: &str,
+    ) -> Result<Self> {
+        let base_url = base_url.trim_end_matches('/');
         let url = if library_version.is_empty() {
-            format!("{BASE_URL}{adoc_path}")
+            format!("{base_url}/{adoc_path}")
         } else {
-            format!("{BASE_URL}{library_version}/{adoc_path}")
+            format!("{base_url}/{library_version}/{adoc_path}")
         };
         let file_content = get_file_content(dir, adoc_path)?;
         let title = process_title(&file_content, title);

@@ -1,18 +1,19 @@
 [package]
-name = "adoc-to-llmstxt"
+name = "oz-llmstxt"
 version = "0.1.0"
 edition = "2021"
 
 [lib]
-name = "adoc_to_llmstxt"
+name = "oz_llmstxt"
 path = "src/lib.rs"
 
 [[bin]]
-name = "adoc-to-llmstxt"
+name = "oz-llmstxt"
 doc = false
 
 [dependencies]
 anyhow = "1.0.95"
+async-trait = "0.1.86"
 clap = { version = "4.5.28", features = ["derive"] }
 config = "0.15.7"
 indoc = "2.0.5"

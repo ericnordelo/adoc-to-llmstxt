@@ -1,3 +1,4 @@
 title = "OpenZeppelin Contracts for Cairo"
 description = "OpenZeppelin Contracts written in Cairo for Starknet, a decentralized ZK Rollup."
 long_description = "A library for secure smart contract development written in Cairo for Starknet. This library consists of a set of reusable components to build custom smart contracts, as well as ready-to-deploy presets. You can also find other utilities including interfaces and dispatchers and test utilities that facilitate testing with Starknet Foundry."
+base_url = "https://docs.openzeppelin.com/contracts-cairo/"

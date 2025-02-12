@@ -9,6 +9,7 @@ pub struct Config {
     pub title: String,
     pub description: String,
     pub long_description: String,
+    pub base_url: String,
 }
 
 /// Get the config from the llmstxt.toml file formatted as a HashMap.
