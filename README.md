@@ -17,13 +17,20 @@ This helps LLMs better understand and reference your project's documentation whe
 > [!TIP]
 >Check [LLMs.txt Explained](https://medium.com/towards-data-science/llms-txt-414d5121bcb3).
 
+## Features
+
+| name                            | status |
+|---------------------------------|--------|
+| standard generation (llms.txt)  | ✅      |
+| full generation (llms-full.txt) | (pending)      |
+
 ## Usage
 
 ### Using the files
 
 While this tool main purpose is to generate the files, you can also find the generated results for different versions of the OpenZeppelin Contracts for Cairo library inside the [llmstxts/](llmstxts) directory. This files can then be used for providing context to different AI applications like [Cursor](https://www.cursor.com/) or [ChatGPT](https://chatgpt.com/).
 
-
+Check [cairo-v0.20.0](llmstxts/cairo-v0.20.0.txt) as an example.
 
 ### Generating the files
 
