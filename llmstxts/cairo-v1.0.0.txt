@@ -1,0 +1,52 @@
+# OpenZeppelin Contracts for Cairo
+
+> OpenZeppelin Contracts written in Cairo for Starknet, a decentralized ZK Rollup.
+
+A library for secure smart contract development written in Cairo for Starknet. This library consists of a set of reusable components to build custom smart contracts, as well as ready-to-deploy presets. You can also find other utilities including interfaces and dispatchers and test utilities that facilitate testing with Starknet Foundry.
+
+## Documentation
+
+[Overview](https://docs.openzeppelin.com/contracts-cairo/1.0.0/index): Overview of the Contracts for Cairo library and its usage
+[Wizard](https://docs.openzeppelin.com/contracts-cairo/1.0.0/wizard): Interactive generator for Cairo contracts
+[Components](https://docs.openzeppelin.com/contracts-cairo/1.0.0/components): Describes how to use the components of the library, including mixins, hooks, initializers, immutable configs and more
+[Presets](https://docs.openzeppelin.com/contracts-cairo/1.0.0/presets): Lists the presets of the library with their corresponding class hashes
+[Interfaces and Dispatchers](https://docs.openzeppelin.com/contracts-cairo/1.0.0/interfaces): Describes the design choices behind the interfaces and dispatchers of the library
+[Counterfactual Deployments](https://docs.openzeppelin.com/contracts-cairo/1.0.0/guides/deployment): Guide describing the process of counterfactual deployments in Starknet
+[SNIP12 and Typed Messages](https://docs.openzeppelin.com/contracts-cairo/1.0.0/guides/snip12): Guide describing the SNIP12 standard and how to implement it in Cairo
+[Access](https://docs.openzeppelin.com/contracts-cairo/1.0.0/access): Describes different forms of access control, including ownership and role-based access
+[Accounts](https://docs.openzeppelin.com/contracts-cairo/1.0.0/accounts): Describes the Accounts modules key features and its usage
+[Finance](https://docs.openzeppelin.com/contracts-cairo/1.0.0/finance): Describes the Finance module key components and its usage
+[Governor](https://docs.openzeppelin.com/contracts-cairo/1.0.0/governance/governor): Describes the Governor component and extensions logic and usage
+[Multisig](https://docs.openzeppelin.com/contracts-cairo/1.0.0/governance/multisig): Describes the Multisig component key features and its usage
+[Timelock Controller](https://docs.openzeppelin.com/contracts-cairo/1.0.0/governance/timelock): Describes the Timelock Controller component key features and its usage
+[Votes](https://docs.openzeppelin.com/contracts-cairo/1.0.0/governance/votes): Describes the Votes component key features and its usage
+[Introspection](https://docs.openzeppelin.com/contracts-cairo/1.0.0/introspection): Describes the introspection mechanisms of the library
+[Migrating ERC165 to SRC5](https://docs.openzeppelin.com/contracts-cairo/1.0.0/guides/src5-migration): Guide describing the process of migrating from ERC165 to SRC5
+[Security](https://docs.openzeppelin.com/contracts-cairo/1.0.0/security): Describes the security components of the library and their usage
+[ERC20](https://docs.openzeppelin.com/contracts-cairo/1.0.0/erc20): Describes the ERC20 token standard and its usage
+[Creating Supply](https://docs.openzeppelin.com/contracts-cairo/1.0.0/guides/erc20-supply): Describes different strategies for handling ERC20 supply
+[ERC20Permit](https://docs.openzeppelin.com/contracts-cairo/1.0.0/guides/erc20-permit): Describes the ERC20Permit extension key features and its usage
+[ERC721](https://docs.openzeppelin.com/contracts-cairo/1.0.0/erc721): Describes the ERC721 token standard and its usage
+[ERC1155](https://docs.openzeppelin.com/contracts-cairo/1.0.0/erc1155): Describes the ERC1155 token standard and its usage
+[Universal Deployer Contract](https://docs.openzeppelin.com/contracts-cairo/1.0.0/udc): Describes the Universal Deployer Contract (UDC) and its usage
+[Upgrades](https://docs.openzeppelin.com/contracts-cairo/1.0.0/upgrades): Describes the upgradeable components of the library and their usage
+[Backwards Compatibility](https://docs.openzeppelin.com/contracts-cairo/1.0.0/backwards-compatibility): Describes the backwards compatibility guarantees of the library
+
+## API Reference
+
+[Access Control API Reference](https://docs.openzeppelin.com/contracts-cairo/1.0.0/api/access): API of the AccessControl and Ownable components, which provide access control mechanisms for Cairo contracts
+[Account API Reference](https://docs.openzeppelin.com/contracts-cairo/1.0.0/api/account): API of the Account and EthAccount components, which provide components to implement account contracts that can be used for interacting with the network
+[Finance API Reference](https://docs.openzeppelin.com/contracts-cairo/1.0.0/api/finance): API of the Finance module, including the Vesting component and linear vesting schedule implementation
+[Governance API Reference](https://docs.openzeppelin.com/contracts-cairo/1.0.0/api/governance): API of the Governance module, including the Governor component, interface and extensions
+[Introspection API Reference](https://docs.openzeppelin.com/contracts-cairo/1.0.0/api/introspection): API of the Introspection module, including the SRC5 component and the ISRC5 interface
+[Merkle Tree](https://docs.openzeppelin.com/contracts-cairo/1.0.0/api/merkle-tree): API of the Merkle Tree module, including mechanisms for verifying Merkle Tree proofs on-chain
+[Security API Reference](https://docs.openzeppelin.com/contracts-cairo/1.0.0/api/security): API of the Security module, including the Initializable, Pausable and ReentrancyGuard components
+[ERC20 API Reference](https://docs.openzeppelin.com/contracts-cairo/1.0.0/api/erc20): API of the ERC20 component, interface, presets and extensions
+[ERC721 API Reference](https://docs.openzeppelin.com/contracts-cairo/1.0.0/api/erc721): API of the ERC721 component, interface, presets and extensions
+[ERC1155 API Reference](https://docs.openzeppelin.com/contracts-cairo/1.0.0/api/erc1155): API of the ERC1155 component, interface, presets and extensions
+[Common](https://docs.openzeppelin.com/contracts-cairo/1.0.0/api/token_common): API of the common token extensions and utilities module, including the ERC2981 component, traits and interface
+[Universal Deployer API Reference](https://docs.openzeppelin.com/contracts-cairo/1.0.0/api/udc): API of the Universal Deployer Contract (UDC) component, interface and preset
+[Upgrades API Reference](https://docs.openzeppelin.com/contracts-cairo/1.0.0/api/upgrades): API of the Upgrades module, providing interfaces and utilities related to upgradeability
+[Utilities](https://docs.openzeppelin.com/contracts-cairo/1.0.0/api/utilities): API of the Utilities module, containing core utilities of the library
+[Test Utilities](https://docs.openzeppelin.com/contracts-cairo/1.0.0/api/testing): API of the Testing module, providing helper functions for testing smart contracts using the `snforge` toolchain from Starknet Foundry
+
