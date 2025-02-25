@@ -24,15 +24,11 @@ pub struct Adoc {
 impl CliCommand for Adoc {
     // Generate a llmstxt file from a directory of adoc files
     async fn run(&self) -> Result<()> {
-        match &self.dir {
-            Some(dir) => {
-                let llmstxt =
-                    generate_from_dir(dir, self.full, self.library_version.clone()).await?;
-                println!("{}", llmstxt);
-            }
-            None => {
-                bail!("No directory provided");
-            }
+        if let Some(dir) = &self.dir {
+            let llmstxt = generate_from_dir(dir, self.full, self.library_version.clone()).await?;
+            println!("{}", llmstxt);
+        } else {
+            bail!("No directory provided");
         }
 
         Ok(())

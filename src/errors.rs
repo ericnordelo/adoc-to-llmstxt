@@ -2,7 +2,6 @@ use std::fmt::Display;
 use std::path::PathBuf;
 
 /// List of errors that can occur.
-#[allow(clippy::enum_variant_names)]
 #[derive(Debug)]
 pub enum Errors {
     ReadDir(PathBuf),
